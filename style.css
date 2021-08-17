@@ -1,0 +1,16 @@
+body{
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width: min(100%, 300px);
+}
+input{
+    background: #000000;
+    color: #ffffff;
+    border: 1px #ffffff solid;
+}
