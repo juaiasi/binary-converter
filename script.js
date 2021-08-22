@@ -1,12 +1,24 @@
 let inputElement = document.getElementById("input");
 let result = document.getElementById("result");
+let convertedTo = document.getElementById("convertedTo");
+let toConvert = document.getElementById("toConvert");
+let btnBinToDec = document.getElementById("binToDec");
+let btnDecToBin = document.getElementById("decToBin");
 let decToBin = false;
 
 function binToDecState(){
     decToBin = false;
+    toConvert.innerHTML = "binary";
+    convertedTo.innerHTML = "Decimal";
+    btnBinToDec.classList.toggle("active");
+    btnDecToBin.classList.toggle("active");
 }
 function decToBinState(){
     decToBin = true;
+    toConvert.innerHTML = "decimal";
+    convertedTo.innerHTML = "Binary";
+    btnBinToDec.classList.toggle("active");
+    btnDecToBin.classList.toggle("active");
 }
 
 function update(){
@@ -31,6 +43,7 @@ function update(){
 
     /* DECIMAL TO BINARY*/
     let binArray = [];
+    let binResult = 0;
     let dividedByTwo = Math.trunc(inputValue/2);
     let reminder = inputValue%2;
     /* coloca o resto da divisão por 2 no começo da array*/
@@ -59,8 +72,12 @@ function update(){
     }else{
         binToDecConverter();
     }
-
-    result.innerHTML = `${resultNumber}`;
+    let patt = new RegExp("[2-9]");
+    /* Retorna a conversão */
+    if(decToBin == false && patt.test(inputValue) == true){
+        result.innerHTML = `<em>This is not a binary number! Use only 0 and 1.</em>`;
+    }
+    else{
+        result.innerHTML = `${resultNumber}`;
+    }
 }
-
-inputElement.addEventListener('change', update);

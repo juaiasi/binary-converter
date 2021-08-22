@@ -9,13 +9,21 @@
 </head>
 <body>
     <div class="container">
-        <input name="converter" type="radio" onclick="binToDecState()" checked>Binário para Decimal</input>
-        <input name="converter" type="radio" onclick="decToBinState()">Decimal para binário</input>
-        
-        <label name="number">Place your binary number here</label>
-        <input name="number" type="number" id="input">
-        <p>Decimal</p>
-        <div id="result"></div>
+        <h1>Binary Converter</h1>
+        <section class="buttons">
+            <button id="binToDec" onclick="binToDecState()" class="active">Binary to Decimal</button>
+            <button id="decToBin" onclick="decToBinState()">Decimal to Binary</button>
+        </section>
+        <section class="inputs">
+            <div class="box insert">
+                <label name="number">Insert your <span id="toConvert">binary</span> number below:</label>
+                <input name="number" type="number" id="input"><button onclick="update()">convert</button>
+            </div>
+            <div class="box">
+                <p><span id="convertedTo">Decimal</span> corresponding:</p>
+                <div id="result"></div>
+            </div>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>

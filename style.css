@@ -1,16 +1,88 @@
+*{
+    margin:0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #000000;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center;
+    overflow: hidden;
 }
 .container{
     width: min(100%, 300px);
 }
-input{
+input, #result{
     background: #000000;
     color: #ffffff;
     border: 1px #ffffff solid;
+    padding: 8px;
+    height: 40px;
+    border-radius: 4px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 8px;
+}
+
+button{
+    padding: 8px;
+    background-color: #000000;
+    color: white;
+    border: 1px #ffffff solid;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+button.active{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+h1, section{
+    margin-bottom: 1.2rem;
+
+}
+.insert{
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-column-gap: 8px;
+}
+.insert label{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.insert button{
+    background-color:rgb(153, 0, 241);
+    border: none;
+    color: white;
+    transition: .3s;
+}
+.insert button:hover{
+    background-color:rgb(112, 0, 241);
+}
+p, label{
+    margin-bottom: 8px;
+    display: block;
+}
+span{
+    font-weight: bold;
 }
